@@ -7,13 +7,16 @@
 //
 
 #import "VellumAppDelegate.h"
+#import "Project.h"
+#import "LoginViewController.h"
 
 @implementation VellumAppDelegate
 
 
 @synthesize window=_window;
-
 @synthesize navigationController=_navigationController;
+@synthesize loginViewController = _loginViewController;
+@synthesize router=_router;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -21,6 +24,24 @@
     // Add the navigation controller's view to the window and display.
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    
+    self.router = [[RKRailsRouter alloc] init];
+    [_router setModelName:@"project" forClass:[Project class]];
+    [_router routeClass:[Project class] toResourcePath:@"/projects/(identifier).json"];
+    [_router routeClass:[Project class] toResourcePath:@"/projects.json" forMethod:RKRequestMethodPOST];
+
+    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://vellum.aegames.org"];
+    manager.router = _router;
+    [RKObjectManager setSharedManager:manager];
+    
+    self.loginViewController.loginDelegate = self.navigationController.topViewController;
+    self.loginViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self.navigationController presentModalViewController:self.loginViewController animated:YES];
+    
+//    RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:@"http://vellum.aegames.org"];
+//    [manager loadObjectsAtResourcePath:@"/projects.json" objectClass:[Project class] delegate:self];
+//    [client get:@"/" delegate:self];
+    
     return YES;
 }
 
@@ -67,6 +88,7 @@
 {
     [_window release];
     [_navigationController release];
+    [_loginViewController release];
     [super dealloc];
 }
 

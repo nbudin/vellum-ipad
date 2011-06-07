@@ -1,14 +1,41 @@
 //
-//  RootViewController.m
+//  ProjectsViewController.m
 //  Vellum
 //
 //  Created by Nat Budin on 6/3/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "ProjectsViewController.h"
 
-@implementation RootViewController
+@implementation ProjectsViewController
+
+- (void)reloadProjects {
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/projects.json" 
+                                                   objectClass:[Project class] 
+                                                      delegate:self];
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error { 
+    NSLog(@"Error loading projects: %@\n", error);
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
+    NSLog(@"Loaded projects: %@\n", objects);
+    [projects release];
+    projects = [[NSArray alloc] initWithArray:objects];
+    [projects retain];
+    
+    [self.tableView reloadData];
+}
+
+- (void)objectLoaderDidLoadUnexpectedResponse:(RKObjectLoader *)objectLoader {
+    NSLog(@"Got unexpected response: %@\n", [objectLoader response]);
+}
+
+- (void)loginSucceeded {
+    [self reloadProjects];
+}
 
 - (void)viewDidLoad
 {
@@ -51,18 +78,27 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    if (projects == nil) {
+        [self reloadProjects];
+        return 0;
+    } else {
+        NSLog(@"Returning %d\n", [projects count]);
+        return [projects count];
+    }
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    Project *project = [projects objectAtIndex:[indexPath indexAtPosition:1]];
+    NSString *CellIdentifier = [NSString stringWithFormat:@"%d", project.identifier];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
+    
+    [[cell textLabel] setText:[project name]];
 
     // Configure the cell.
     return cell;
@@ -139,6 +175,7 @@
 - (void)dealloc
 {
     [super dealloc];
+    [projects release];
 }
 
 @end

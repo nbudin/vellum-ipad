@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		668E7AC51399612300A0E5E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7AC41399612300A0E5E0 /* UIKit.framework */; };
+		668E7AC71399612300A0E5E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7AC61399612300A0E5E0 /* Foundation.framework */; };
+		668E7AC91399612300A0E5E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7AC81399612300A0E5E0 /* CoreGraphics.framework */; };
+		668E7ACF1399612300A0E5E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 668E7ACD1399612300A0E5E0 /* InfoPlist.strings */; };
+		668E7AD21399612300A0E5E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E7AD11399612300A0E5E0 /* main.m */; };
+		668E7AD51399612300A0E5E0 /* VellumAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E7AD41399612300A0E5E0 /* VellumAppDelegate.m */; };
+		668E7ADB1399612300A0E5E0 /* ProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E7ADA1399612300A0E5E0 /* ProjectsViewController.m */; };
+		668E7ADE1399612300A0E5E0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668E7ADC1399612300A0E5E0 /* ProjectsViewController.xib */; };
+		668E7AE71399616400A0E5E0 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668E7AE51399616400A0E5E0 /* MainWindow-iPad.xib */; };
+		668E7B2B1399634D00A0E5E0 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B271399634D00A0E5E0 /* libRestKitNetwork.a */; };
+		668E7B2C1399634D00A0E5E0 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B281399634D00A0E5E0 /* libRestKitObjectMapping.a */; };
+		668E7B2D1399634D00A0E5E0 /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B291399634D00A0E5E0 /* libRestKitSupport.a */; };
+		668E7B331399634D00A0E5E0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B2E1399634D00A0E5E0 /* CFNetwork.framework */; };
+		668E7B341399634D00A0E5E0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B2F1399634D00A0E5E0 /* CoreData.framework */; };
+		668E7B361399634D00A0E5E0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B311399634D00A0E5E0 /* MobileCoreServices.framework */; };
+		668E7B371399634D00A0E5E0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B321399634D00A0E5E0 /* SystemConfiguration.framework */; };
+		668E7B411399643600A0E5E0 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B401399643600A0E5E0 /* libRestKitCoreData.a */; };
+		668E7B431399644600A0E5E0 /* libRestKitJSONParserYAJL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B421399644600A0E5E0 /* libRestKitJSONParserYAJL.a */; };
+		668E7B471399660200A0E5E0 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E7B461399660200A0E5E0 /* Project.m */; };
+		668E7B491399686E00A0E5E0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668E7B481399686E00A0E5E0 /* LoginViewController.xib */; };
+		668E7B4C13996B8800A0E5E0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E7B4B13996B8800A0E5E0 /* LoginViewController.m */; };
+		66D2C81B139E9E5C00428452 /* sugarpond.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D2C81A139E9E5C00428452 /* sugarpond.png */; };
+		66D2C821139E9EFB00428452 /* LiberationSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66D2C81D139E9EFB00428452 /* LiberationSerif-Bold.ttf */; };
+		66D2C822139E9EFB00428452 /* LiberationSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66D2C81E139E9EFB00428452 /* LiberationSerif-BoldItalic.ttf */; };
+		66D2C823139E9EFB00428452 /* LiberationSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66D2C81F139E9EFB00428452 /* LiberationSerif-Italic.ttf */; };
+		66D2C824139E9EFB00428452 /* LiberationSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66D2C820139E9EFB00428452 /* LiberationSerif-Regular.ttf */; };
+		66D2C826139EBD5300428452 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D2C825139EBD5300428452 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		668E7B10139962A700A0E5E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A07FC1255161B00976E89;
+			remoteInfo = RestKitNetwork;
+		};
+		668E7B12139962A700A0E5E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A08031255162C00976E89;
+			remoteInfo = RestKitObjectMapping;
+		};
+		668E7B14139962A700A0E5E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A080C12551D3000976E89;
+			remoteInfo = RestKitSupport;
+		};
+		668E7B16139962A700A0E5E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2590E64F125231F600531FA8;
+			remoteInfo = "RestKitJSONParser+YAJL";
+		};
+		668E7B18139962A700A0E5E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2590E66B1252353700531FA8;
+			remoteInfo = "RestKitJSONParser+SBJSON";
+		};
+		668E7B1A139962A700A0E5E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 73057FD11331AD2E001908EE;
+			remoteInfo = "RestKitJSONParser+JSONKit";
+		};
+		668E7B1C139962A700A0E5E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25BD43BD1340315800DBACDD;
+			remoteInfo = "RestKitXMLParser+Libxml";
+		};
+		668E7B1E139962A700A0E5E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A081412551D5300976E89;
+			remoteInfo = RestKitCoreData;
+		};
+		668E7B20139962A700A0E5E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2523360511E79F090048F9B4;
+			remoteInfo = RestKitThree20;
+		};
+		668E7B22139962A700A0E5E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3F6C39A510FE5C95008F47C5;
+			remoteInfo = UISpec;
+		};
+		668E7B241399630A00A0E5E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 255B7588133BABBF00ED76AD;
+			remoteInfo = RestKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		668E7AC01399612300A0E5E0 /* Vellum for iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vellum for iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		668E7AC41399612300A0E5E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		668E7AC61399612300A0E5E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		668E7AC81399612300A0E5E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		668E7ACC1399612300A0E5E0 /* Vellum for iPad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Vellum for iPad-Info.plist"; sourceTree = "<group>"; };
+		668E7ACE1399612300A0E5E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		668E7AD01399612300A0E5E0 /* Vellum for iPad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vellum for iPad-Prefix.pch"; sourceTree = "<group>"; };
+		668E7AD11399612300A0E5E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		668E7AD31399612300A0E5E0 /* VellumAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VellumAppDelegate.h; sourceTree = "<group>"; };
+		668E7AD41399612300A0E5E0 /* VellumAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VellumAppDelegate.m; sourceTree = "<group>"; };
+		668E7AD91399612300A0E5E0 /* ProjectsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectsViewController.h; sourceTree = "<group>"; };
+		668E7ADA1399612300A0E5E0 /* ProjectsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectsViewController.m; sourceTree = "<group>"; };
+		668E7ADD1399612300A0E5E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ProjectsViewController.xib; sourceTree = "<group>"; };
+		668E7AE61399616400A0E5E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Vellum/iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		668E7B261399634D00A0E5E0 /* libRestKitJSONParserJSONKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserJSONKit.a; sourceTree = SOURCE_ROOT; };
+		668E7B271399634D00A0E5E0 /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitNetwork.a; sourceTree = SOURCE_ROOT; };
+		668E7B281399634D00A0E5E0 /* libRestKitObjectMapping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitObjectMapping.a; sourceTree = SOURCE_ROOT; };
+		668E7B291399634D00A0E5E0 /* libRestKitSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitSupport.a; sourceTree = SOURCE_ROOT; };
+		668E7B2E1399634D00A0E5E0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		668E7B2F1399634D00A0E5E0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		668E7B301399634D00A0E5E0 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		668E7B311399634D00A0E5E0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		668E7B321399634D00A0E5E0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		668E7B401399643600A0E5E0 /* libRestKitCoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitCoreData.a; sourceTree = SOURCE_ROOT; };
+		668E7B421399644600A0E5E0 /* libRestKitJSONParserYAJL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserYAJL.a; sourceTree = SOURCE_ROOT; };
+		668E7B451399660200A0E5E0 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
+		668E7B461399660200A0E5E0 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		668E7B481399686E00A0E5E0 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		668E7B4A13996B8800A0E5E0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		668E7B4B13996B8800A0E5E0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		66D2C81A139E9E5C00428452 /* sugarpond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sugarpond.png; path = "../../journey-marketing/sugarpond.png"; sourceTree = "<group>"; };
+		66D2C81D139E9EFB00428452 /* LiberationSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LiberationSerif-Bold.ttf"; sourceTree = "<group>"; };
+		66D2C81E139E9EFB00428452 /* LiberationSerif-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LiberationSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
+		66D2C81F139E9EFB00428452 /* LiberationSerif-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LiberationSerif-Italic.ttf"; sourceTree = "<group>"; };
+		66D2C820139E9EFB00428452 /* LiberationSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LiberationSerif-Regular.ttf"; sourceTree = "<group>"; };
+		66D2C825139EBD5300428452 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		66D2C827139EC3EF00428452 /* SugarPondLoginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SugarPondLoginDelegate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		668E7ABD1399612200A0E5E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D2C826139EBD5300428452 /* QuartzCore.framework in Frameworks */,
+				668E7B431399644600A0E5E0 /* libRestKitJSONParserYAJL.a in Frameworks */,
+				668E7B411399643600A0E5E0 /* libRestKitCoreData.a in Frameworks */,
+				668E7B331399634D00A0E5E0 /* CFNetwork.framework in Frameworks */,
+				668E7B341399634D00A0E5E0 /* CoreData.framework in Frameworks */,
+				668E7B361399634D00A0E5E0 /* MobileCoreServices.framework in Frameworks */,
+				668E7B371399634D00A0E5E0 /* SystemConfiguration.framework in Frameworks */,
+				668E7B2B1399634D00A0E5E0 /* libRestKitNetwork.a in Frameworks */,
+				668E7B2C1399634D00A0E5E0 /* libRestKitObjectMapping.a in Frameworks */,
+				668E7B2D1399634D00A0E5E0 /* libRestKitSupport.a in Frameworks */,
+				668E7AC51399612300A0E5E0 /* UIKit.framework in Frameworks */,
+				668E7AC71399612300A0E5E0 /* Foundation.framework in Frameworks */,
+				668E7AC91399612300A0E5E0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		668E7AB51399612200A0E5E0 = {
+			isa = PBXGroup;
+			children = (
+				66D2C825139EBD5300428452 /* QuartzCore.framework */,
+				66D2C81C139E9EE700428452 /* Resources */,
+				668E7B44139965EA00A0E5E0 /* Models */,
+				668E7B421399644600A0E5E0 /* libRestKitJSONParserYAJL.a */,
+				668E7B401399643600A0E5E0 /* libRestKitCoreData.a */,
+				668E7B2E1399634D00A0E5E0 /* CFNetwork.framework */,
+				668E7B2F1399634D00A0E5E0 /* CoreData.framework */,
+				668E7B301399634D00A0E5E0 /* libxml2.dylib */,
+				668E7B311399634D00A0E5E0 /* MobileCoreServices.framework */,
+				668E7B321399634D00A0E5E0 /* SystemConfiguration.framework */,
+				668E7B261399634D00A0E5E0 /* libRestKitJSONParserJSONKit.a */,
+				668E7B271399634D00A0E5E0 /* libRestKitNetwork.a */,
+				668E7B281399634D00A0E5E0 /* libRestKitObjectMapping.a */,
+				668E7B291399634D00A0E5E0 /* libRestKitSupport.a */,
+				668E7AE41399616100A0E5E0 /* iPad */,
+				668E7ACA1399612300A0E5E0 /* Vellum */,
+				668E7AC31399612300A0E5E0 /* Frameworks */,
+				668E7AC11399612300A0E5E0 /* Products */,
+				668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		668E7AC11399612300A0E5E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				668E7AC01399612300A0E5E0 /* Vellum for iPad.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		668E7AC31399612300A0E5E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				668E7AC41399612300A0E5E0 /* UIKit.framework */,
+				668E7AC61399612300A0E5E0 /* Foundation.framework */,
+				668E7AC81399612300A0E5E0 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		668E7ACA1399612300A0E5E0 /* Vellum */ = {
+			isa = PBXGroup;
+			children = (
+				668E7AE51399616400A0E5E0 /* MainWindow-iPad.xib */,
+				668E7AD31399612300A0E5E0 /* VellumAppDelegate.h */,
+				668E7AD41399612300A0E5E0 /* VellumAppDelegate.m */,
+				668E7AD91399612300A0E5E0 /* ProjectsViewController.h */,
+				668E7ADA1399612300A0E5E0 /* ProjectsViewController.m */,
+				668E7ADC1399612300A0E5E0 /* ProjectsViewController.xib */,
+				668E7ACB1399612300A0E5E0 /* Supporting Files */,
+				668E7B481399686E00A0E5E0 /* LoginViewController.xib */,
+				668E7B4A13996B8800A0E5E0 /* LoginViewController.h */,
+				668E7B4B13996B8800A0E5E0 /* LoginViewController.m */,
+				66D2C827139EC3EF00428452 /* SugarPondLoginDelegate.h */,
+			);
+			path = Vellum;
+			sourceTree = "<group>";
+		};
+		668E7ACB1399612300A0E5E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				668E7ACC1399612300A0E5E0 /* Vellum for iPad-Info.plist */,
+				668E7ACD1399612300A0E5E0 /* InfoPlist.strings */,
+				668E7AD01399612300A0E5E0 /* Vellum for iPad-Prefix.pch */,
+				668E7AD11399612300A0E5E0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		668E7AE41399616100A0E5E0 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		668E7AFD139962A600A0E5E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				668E7B11139962A700A0E5E0 /* libRestKitNetwork.a */,
+				668E7B13139962A700A0E5E0 /* libRestKitObjectMapping.a */,
+				668E7B15139962A700A0E5E0 /* libRestKitSupport.a */,
+				668E7B17139962A700A0E5E0 /* libRestKitJSONParserYAJL.a */,
+				668E7B19139962A700A0E5E0 /* libRestKitJSONParserSBJSON.a */,
+				668E7B1B139962A700A0E5E0 /* libRestKitJSONParserJSONKit.a */,
+				668E7B1D139962A700A0E5E0 /* libRestKitXMLParserLibxml.a */,
+				668E7B1F139962A700A0E5E0 /* libRestKitCoreData.a */,
+				668E7B21139962A700A0E5E0 /* libRestKitThree20.a */,
+				668E7B23139962A700A0E5E0 /* UISpec.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		668E7B44139965EA00A0E5E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				668E7B451399660200A0E5E0 /* Project.h */,
+				668E7B461399660200A0E5E0 /* Project.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		66D2C81C139E9EE700428452 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66D2C81D139E9EFB00428452 /* LiberationSerif-Bold.ttf */,
+				66D2C81E139E9EFB00428452 /* LiberationSerif-BoldItalic.ttf */,
+				66D2C81F139E9EFB00428452 /* LiberationSerif-Italic.ttf */,
+				66D2C820139E9EFB00428452 /* LiberationSerif-Regular.ttf */,
+				66D2C81A139E9E5C00428452 /* sugarpond.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		668E7ABF1399612200A0E5E0 /* Vellum for iPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 668E7AE11399612300A0E5E0 /* Build configuration list for PBXNativeTarget "Vellum for iPad" */;
+			buildPhases = (
+				668E7ABC1399612200A0E5E0 /* Sources */,
+				668E7ABD1399612200A0E5E0 /* Frameworks */,
+				668E7ABE1399612200A0E5E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				668E7B251399630A00A0E5E0 /* PBXTargetDependency */,
+			);
+			name = "Vellum for iPad";
+			productName = Vellum;
+			productReference = 668E7AC01399612300A0E5E0 /* Vellum for iPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		668E7AB71399612200A0E5E0 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 668E7ABA1399612200A0E5E0 /* Build configuration list for PBXProject "Vellum for iPad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 668E7AB51399612200A0E5E0;
+			productRefGroup = 668E7AC11399612300A0E5E0 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 668E7AFD139962A600A0E5E0 /* Products */;
+					ProjectRef = 668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				668E7ABF1399612200A0E5E0 /* Vellum for iPad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		668E7B11139962A700A0E5E0 /* libRestKitNetwork.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitNetwork.a;
+			remoteRef = 668E7B10139962A700A0E5E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		668E7B13139962A700A0E5E0 /* libRestKitObjectMapping.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitObjectMapping.a;
+			remoteRef = 668E7B12139962A700A0E5E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		668E7B15139962A700A0E5E0 /* libRestKitSupport.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitSupport.a;
+			remoteRef = 668E7B14139962A700A0E5E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		668E7B17139962A700A0E5E0 /* libRestKitJSONParserYAJL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserYAJL.a;
+			remoteRef = 668E7B16139962A700A0E5E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		668E7B19139962A700A0E5E0 /* libRestKitJSONParserSBJSON.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserSBJSON.a;
+			remoteRef = 668E7B18139962A700A0E5E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		668E7B1B139962A700A0E5E0 /* libRestKitJSONParserJSONKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserJSONKit.a;
+			remoteRef = 668E7B1A139962A700A0E5E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		668E7B1D139962A700A0E5E0 /* libRestKitXMLParserLibxml.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitXMLParserLibxml.a;
+			remoteRef = 668E7B1C139962A700A0E5E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		668E7B1F139962A700A0E5E0 /* libRestKitCoreData.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitCoreData.a;
+			remoteRef = 668E7B1E139962A700A0E5E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		668E7B21139962A700A0E5E0 /* libRestKitThree20.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitThree20.a;
+			remoteRef = 668E7B20139962A700A0E5E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		668E7B23139962A700A0E5E0 /* UISpec.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = UISpec.app;
+			remoteRef = 668E7B22139962A700A0E5E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		668E7ABE1399612200A0E5E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				668E7ACF1399612300A0E5E0 /* InfoPlist.strings in Resources */,
+				668E7ADE1399612300A0E5E0 /* ProjectsViewController.xib in Resources */,
+				668E7AE71399616400A0E5E0 /* MainWindow-iPad.xib in Resources */,
+				668E7B491399686E00A0E5E0 /* LoginViewController.xib in Resources */,
+				66D2C81B139E9E5C00428452 /* sugarpond.png in Resources */,
+				66D2C821139E9EFB00428452 /* LiberationSerif-Bold.ttf in Resources */,
+				66D2C822139E9EFB00428452 /* LiberationSerif-BoldItalic.ttf in Resources */,
+				66D2C823139E9EFB00428452 /* LiberationSerif-Italic.ttf in Resources */,
+				66D2C824139E9EFB00428452 /* LiberationSerif-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		668E7ABC1399612200A0E5E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				668E7AD21399612300A0E5E0 /* main.m in Sources */,
+				668E7AD51399612300A0E5E0 /* VellumAppDelegate.m in Sources */,
+				668E7ADB1399612300A0E5E0 /* ProjectsViewController.m in Sources */,
+				668E7B471399660200A0E5E0 /* Project.m in Sources */,
+				668E7B4C13996B8800A0E5E0 /* LoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		668E7B251399630A00A0E5E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 668E7B241399630A00A0E5E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		668E7ACD1399612300A0E5E0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				668E7ACE1399612300A0E5E0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		668E7ADC1399612300A0E5E0 /* ProjectsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				668E7ADD1399612300A0E5E0 /* en */,
+			);
+			name = ProjectsViewController.xib;
+			sourceTree = "<group>";
+		};
+		668E7AE51399616400A0E5E0 /* MainWindow-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				668E7AE61399616400A0E5E0 /* en */,
+			);
+			name = "MainWindow-iPad.xib";
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		668E7ADF1399612300A0E5E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		668E7AE01399612300A0E5E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		668E7AE21399612300A0E5E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vellum/Vellum for iPad-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
+				INFOPLIST_FILE = "Vellum/Vellum for iPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
+					"\"$(SRCROOT)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "Vellum for iPad";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		668E7AE31399612300A0E5E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vellum/Vellum for iPad-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
+				INFOPLIST_FILE = "Vellum/Vellum for iPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
+					"\"$(SRCROOT)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "Vellum for iPad";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		668E7ABA1399612200A0E5E0 /* Build configuration list for PBXProject "Vellum for iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				668E7ADF1399612300A0E5E0 /* Debug */,
+				668E7AE01399612300A0E5E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		668E7AE11399612300A0E5E0 /* Build configuration list for PBXNativeTarget "Vellum for iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				668E7AE21399612300A0E5E0 /* Debug */,
+				668E7AE31399612300A0E5E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 668E7AB71399612200A0E5E0 /* Project object */;
+}
