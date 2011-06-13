@@ -15,8 +15,8 @@
 @synthesize loginLabelTop;
 @synthesize loginLabelBottom;
 @synthesize loginForm;
+@synthesize progressLabel;
 @synthesize activityIndicator;
-@synthesize navigationController;
 @synthesize loginDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,6 +38,7 @@
     [loginLabelBottom release];
     [loginForm release];
     [activityIndicator release];
+    [progressLabel release];
     [super dealloc];
 }
 
@@ -114,9 +115,11 @@
 - (IBAction)login {
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://vellum.aegames.org/people/sign_in"]]];
     
+    progressLabel.text = @"Connecting to Vellum...";
     [UIView animateWithDuration:0.25 
                      animations:^{
                          loginForm.alpha = 0.0;
+                         progressLabel.hidden = false;
                      } 
      
                      completion:^(BOOL finished) {
@@ -130,10 +133,16 @@
     
     if ([[url host] isEqualToString:@"vellum.aegames.org"]) {
         [activityIndicator stopAnimating];
+        progressLabel.text = @"";
+        progressLabel.hidden = true;
+        [progressLabel setNeedsDisplay];
+        
         [loginDelegate loginSucceeded];
-        [navigationController dismissModalViewControllerAnimated:true];
     } else if ([[url host] isEqualToString:@"accounts.sugarpond.net"]) {
         RKJSONParser *parser = [RKJSONParser new];
+        
+        progressLabel.text = @"Logging in...";
+        [progressLabel setNeedsDisplay];
         
         NSString *jsonEmail = [parser stringFromObject:[email text]];
         NSString *jsonPassword = [parser stringFromObject:[password text]];

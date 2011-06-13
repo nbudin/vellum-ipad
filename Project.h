@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <RestKit/RestKit.h>
+#import <RestKit/CoreData/CoreData.h>
 
-@interface Project : RKObject {
-    NSString *_name;
-    NSNumber *_identifier;
-}
+@interface Project : RKManagedObject 
 
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) NSNumber* identifier;
+@property (nonatomic, retain) NSSet* docTemplates;
+@property (nonatomic, retain) NSSet* docs;
+
 
 @end

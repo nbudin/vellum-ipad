@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="837" systemVersion="10J869" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Doc" representedClassName="Doc">
+        <attribute name="attrs" optional="YES" attributeType="Transformable"/>
+        <attribute name="blurb" optional="YES" attributeType="String"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="docTemplateId" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <attribute name="projectId" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <attribute name="version" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <relationship name="docTemplate" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DocTemplate" inverseName="docs" inverseEntity="DocTemplate"/>
+        <relationship name="project" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="docs" inverseEntity="Project"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="identifier"/>
+                <index value="identifier"/>
+                <index value="identifier"/>
+                <index value="identifier"/>
+                <index value="identifier"/>
+                <index value="identifier"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <entity name="DocTemplate" representedClassName="DocTemplate">
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="projectId" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <relationship name="docs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Doc" inverseName="docTemplate" inverseEntity="Doc"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="docTemplates" inverseEntity="Project"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="identifier"/>
+                <index value="identifier"/>
+                <index value="identifier"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <entity name="Project" representedClassName="Project">
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="docs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Doc" inverseName="project" inverseEntity="Doc"/>
+        <relationship name="docTemplates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DocTemplate" inverseName="project" inverseEntity="DocTemplate"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="identifier"/>
+            </compoundIndex>
+            <compoundIndex>
+                <index value="name"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <elements>
+        <element name="Doc" positionX="90" positionY="180" width="128" height="210"/>
+        <element name="DocTemplate" positionX="-63" positionY="-36" width="128" height="105"/>
+        <element name="Project" positionX="-18" positionY="153" width="128" height="90"/>
+    </elements>
+</model>

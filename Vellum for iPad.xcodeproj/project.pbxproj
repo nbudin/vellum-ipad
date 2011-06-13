@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66124E91139FCE7A0066A45B /* DocsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66124E8F139FCE7A0066A45B /* DocsListViewController.m */; };
+		66124E92139FCE7A0066A45B /* DocsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66124E90139FCE7A0066A45B /* DocsListViewController.xib */; };
+		66124E95139FCEB10066A45B /* Doc.m in Sources */ = {isa = PBXBuildFile; fileRef = 66124E94139FCEB10066A45B /* Doc.m */; };
+		66124E98139FD4440066A45B /* Attr.m in Sources */ = {isa = PBXBuildFile; fileRef = 66124E97139FD4440066A45B /* Attr.m */; };
+		6619FCD313A0015900D63BB2 /* DocTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6619FCD213A0015900D63BB2 /* DocTemplate.m */; };
+		662E674F13A26D6B002997A0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 662E674D13A26D6B002997A0 /* DetailViewController.m */; };
+		662E675213A2741C002997A0 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662E675113A2741C002997A0 /* DetailViewController.xib */; };
+		666E95EB13A680B40056834D /* Vellum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 666E95E913A680B40056834D /* Vellum.xcdatamodeld */; };
 		668E7AC51399612300A0E5E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7AC41399612300A0E5E0 /* UIKit.framework */; };
 		668E7AC71399612300A0E5E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7AC61399612300A0E5E0 /* Foundation.framework */; };
 		668E7AC91399612300A0E5E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7AC81399612300A0E5E0 /* CoreGraphics.framework */; };
@@ -117,6 +125,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66124E8E139FCE7A0066A45B /* DocsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocsListViewController.h; sourceTree = "<group>"; };
+		66124E8F139FCE7A0066A45B /* DocsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocsListViewController.m; sourceTree = "<group>"; };
+		66124E90139FCE7A0066A45B /* DocsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocsListViewController.xib; sourceTree = "<group>"; };
+		66124E93139FCEB10066A45B /* Doc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doc.h; sourceTree = "<group>"; };
+		66124E94139FCEB10066A45B /* Doc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doc.m; sourceTree = "<group>"; };
+		66124E96139FD4440066A45B /* Attr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attr.h; sourceTree = "<group>"; };
+		66124E97139FD4440066A45B /* Attr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attr.m; sourceTree = "<group>"; };
+		6619FCD113A0015900D63BB2 /* DocTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocTemplate.h; sourceTree = "<group>"; };
+		6619FCD213A0015900D63BB2 /* DocTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocTemplate.m; sourceTree = "<group>"; };
+		662E674C13A26D6B002997A0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		662E674D13A26D6B002997A0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		662E675113A2741C002997A0 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		666E95EA13A680B40056834D /* Vellum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vellum.xcdatamodel; sourceTree = "<group>"; };
 		668E7AC01399612300A0E5E0 /* Vellum for iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vellum for iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		668E7AC41399612300A0E5E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		668E7AC61399612300A0E5E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -238,6 +259,12 @@
 				668E7B4A13996B8800A0E5E0 /* LoginViewController.h */,
 				668E7B4B13996B8800A0E5E0 /* LoginViewController.m */,
 				66D2C827139EC3EF00428452 /* SugarPondLoginDelegate.h */,
+				66124E8E139FCE7A0066A45B /* DocsListViewController.h */,
+				66124E8F139FCE7A0066A45B /* DocsListViewController.m */,
+				66124E90139FCE7A0066A45B /* DocsListViewController.xib */,
+				662E674C13A26D6B002997A0 /* DetailViewController.h */,
+				662E674D13A26D6B002997A0 /* DetailViewController.m */,
+				662E675113A2741C002997A0 /* DetailViewController.xib */,
 			);
 			path = Vellum;
 			sourceTree = "<group>";
@@ -280,8 +307,15 @@
 		668E7B44139965EA00A0E5E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				666E95E913A680B40056834D /* Vellum.xcdatamodeld */,
 				668E7B451399660200A0E5E0 /* Project.h */,
 				668E7B461399660200A0E5E0 /* Project.m */,
+				66124E93139FCEB10066A45B /* Doc.h */,
+				66124E94139FCEB10066A45B /* Doc.m */,
+				66124E96139FD4440066A45B /* Attr.h */,
+				66124E97139FD4440066A45B /* Attr.m */,
+				6619FCD113A0015900D63BB2 /* DocTemplate.h */,
+				6619FCD213A0015900D63BB2 /* DocTemplate.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -324,6 +358,9 @@
 /* Begin PBXProject section */
 		668E7AB71399612200A0E5E0 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 668E7ABA1399612200A0E5E0 /* Build configuration list for PBXProject "Vellum for iPad" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -434,6 +471,8 @@
 				66D2C822139E9EFB00428452 /* LiberationSerif-BoldItalic.ttf in Resources */,
 				66D2C823139E9EFB00428452 /* LiberationSerif-Italic.ttf in Resources */,
 				66D2C824139E9EFB00428452 /* LiberationSerif-Regular.ttf in Resources */,
+				66124E92139FCE7A0066A45B /* DocsListViewController.xib in Resources */,
+				662E675213A2741C002997A0 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +488,12 @@
 				668E7ADB1399612300A0E5E0 /* ProjectsViewController.m in Sources */,
 				668E7B471399660200A0E5E0 /* Project.m in Sources */,
 				668E7B4C13996B8800A0E5E0 /* LoginViewController.m in Sources */,
+				66124E91139FCE7A0066A45B /* DocsListViewController.m in Sources */,
+				66124E95139FCEB10066A45B /* Doc.m in Sources */,
+				66124E98139FD4440066A45B /* Attr.m in Sources */,
+				6619FCD313A0015900D63BB2 /* DocTemplate.m in Sources */,
+				662E674F13A26D6B002997A0 /* DetailViewController.m in Sources */,
+				666E95EB13A680B40056834D /* Vellum.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +546,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -515,6 +561,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -595,6 +642,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		666E95E913A680B40056834D /* Vellum.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				666E95EA13A680B40056834D /* Vellum.xcdatamodel */,
+			);
+			currentVersion = 666E95EA13A680B40056834D /* Vellum.xcdatamodel */;
+			path = Vellum.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 668E7AB71399612200A0E5E0 /* Project object */;
 }

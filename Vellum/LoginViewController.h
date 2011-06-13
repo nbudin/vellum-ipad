@@ -15,9 +15,9 @@
     IBOutlet UITextField *email;
     IBOutlet UITextField *password;
     IBOutlet UIWebView *webView;
-    IBOutlet UINavigationController *navigationController;
     UILabel *loginLabelTop;
     UILabel *loginLabelBottom;
+    UILabel *progressLabel;
     UIView *loginForm;
     UIActivityIndicatorView *activityIndicator;
     id<SugarPondLoginDelegate> loginDelegate;
@@ -25,10 +25,9 @@
 - (IBAction)login;
 @property (nonatomic, retain) IBOutlet UILabel *loginLabelTop;
 @property (nonatomic, retain) IBOutlet UILabel *loginLabelBottom;
+@property (nonatomic, retain) IBOutlet UILabel *progressLabel;
 @property (nonatomic, retain) IBOutlet UIView *loginForm;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
-
-@property (nonatomic, assign) UINavigationController *navigationController;
-@property (nonatomic, assign) id<SugarPondLoginDelegate> loginDelegate;
+@property (nonatomic, assign) IBOutlet id<SugarPondLoginDelegate> loginDelegate;
 
 @end

@@ -11,7 +11,7 @@
 
 @implementation Project
 
-@synthesize name=_name, identifier=_identifier;
+@dynamic name, identifier, docs, docTemplates;
 
 +(NSDictionary *)elementToPropertyMappings {
     return [NSDictionary dictionaryWithKeysAndObjects:
@@ -22,6 +22,10 @@
 
 -(NSString *)description {
     return [NSString stringWithFormat:@"<Project:%@>", self.name];
+}
+
++(NSString *)primaryKeyProperty {
+    return @"identifier";
 }
 
 @end

@@ -9,6 +9,8 @@
 #import "VellumAppDelegate.h"
 #import "Project.h"
 #import "LoginViewController.h"
+#import <RestKit/CoreData/CoreData.h>
+#import "Attr.h"
 
 @implementation VellumAppDelegate
 
@@ -16,33 +18,48 @@
 @synthesize window=_window;
 @synthesize navigationController=_navigationController;
 @synthesize loginViewController = _loginViewController;
+@synthesize splitViewController=_splitViewController;
+@synthesize projectsViewController=_projectsViewController;
+@synthesize detailViewController = _detailViewController;
 @synthesize router=_router;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     // Add the navigation controller's view to the window and display.
-    self.window.rootViewController = self.navigationController;
+//    self.window.rootViewController = self.splitViewController;
+    [self.window addSubview:self.splitViewController.view];
     [self.window makeKeyAndVisible];
     
     self.router = [[RKRailsRouter alloc] init];
-    [_router setModelName:@"project" forClass:[Project class]];
-    [_router routeClass:[Project class] toResourcePath:@"/projects/(identifier).json"];
-    [_router routeClass:[Project class] toResourcePath:@"/projects.json" forMethod:RKRequestMethodPOST];
+    [self.router setModelName:@"project" forClass:[Project class]];
+    [self.router routeClass:[Project class] toResourcePath:@"/projects/(identifier).json"];
+    [self.router routeClass:[Project class] toResourcePath:@"/projects.json" forMethod:RKRequestMethodPOST];
+    
+    [self.router setModelName:@"doc" forClass:[Doc class]];
+    [self.router routeClass:[Doc class] toResourcePath:@"/projects/(project.identifier)/docs/(identifier).json"];
+    [self.router routeClass:[Doc class] toResourcePath:@"/projects/(project.identifier)/docs.json" forMethod:RKRequestMethodPOST];
 
     RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://vellum.aegames.org"];
-    manager.router = _router;
+    manager.router = self.router;
+    manager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"Vellum.db"];
+    [manager.mapper registerClass:[Attr class] forElementNamed:@"attrs"];
     [RKObjectManager setSharedManager:manager];
     
-    self.loginViewController.loginDelegate = self.navigationController.topViewController;
     self.loginViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self.navigationController presentModalViewController:self.loginViewController animated:YES];
-    
-//    RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:@"http://vellum.aegames.org"];
-//    [manager loadObjectsAtResourcePath:@"/projects.json" objectClass:[Project class] delegate:self];
-//    [client get:@"/" delegate:self];
+    [self.splitViewController presentModalViewController:self.loginViewController animated:YES];
     
     return YES;
+}
+
+- (void)loginFailedWithError:(NSError *)error {
+    
+}
+
+- (void)loginSucceeded {
+    [self.splitViewController dismissModalViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.projectsViewController reloadProjects];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -89,6 +106,7 @@
     [_window release];
     [_navigationController release];
     [_loginViewController release];
+    [_detailViewController release];
     [super dealloc];
 }
 

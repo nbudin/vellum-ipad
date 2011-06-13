@@ -7,13 +7,24 @@
 //
 
 #import "ProjectsViewController.h"
+#import "DocsListViewController.h"
 
 @implementation ProjectsViewController
+@synthesize navigationController=_navigationController, detailViewController=_detailViewController;
 
 - (void)reloadProjects {
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/projects.json" 
                                                    objectClass:[Project class] 
                                                       delegate:self];
+}
+
+- (void)loadProjectsFromDatastore {
+    [projects release];
+    
+    NSFetchRequest *request = [Project fetchRequest];
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+    [request setSortDescriptors:[NSArray arrayWithObject:descriptor]];
+    projects = [[Project objectsWithFetchRequest:request] retain];
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error { 
@@ -22,10 +33,7 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
     NSLog(@"Loaded projects: %@\n", objects);
-    [projects release];
-    projects = [[NSArray alloc] initWithArray:objects];
-    [projects retain];
-    
+    [self loadProjectsFromDatastore];
     [self.tableView reloadData];
 }
 
@@ -33,13 +41,10 @@
     NSLog(@"Got unexpected response: %@\n", [objectLoader response]);
 }
 
-- (void)loginSucceeded {
-    [self reloadProjects];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Projects";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -62,13 +67,11 @@
 	[super viewDidDisappear:animated];
 }
 
-/*
+
  // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
- */
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -99,6 +102,7 @@
     }
     
     [[cell textLabel] setText:[project name]];
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 
     // Configure the cell.
     return cell;
@@ -147,13 +151,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-    // ...
+    Project *project = [projects objectAtIndex:[indexPath indexAtPosition:1]];
+    DocsListViewController *docsList = [[DocsListViewController alloc] initWithNibName:@"DocsListViewController" bundle:nil];
+    docsList.project = project;
+    docsList.title = project.name;
+    docsList.detailViewController = self.detailViewController;
+    [docsList reloadDocs];
+    
     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-	*/
+    [self.navigationController pushViewController:docsList animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
