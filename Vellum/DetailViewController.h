@@ -10,7 +10,7 @@
 #import <RestKit/RestKit.h>
 #import "Doc.h"
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, UIPopoverControllerDelegate, UITableViewDelegate, UITableViewDataSource, RKObjectLoaderDelegate> {
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, RKObjectLoaderDelegate> {
     
     UIToolbar *_toolbar;
     UIBarButtonItem *_navigatorButton;
@@ -20,7 +20,6 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *navigatorButton;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) Doc *doc;
 

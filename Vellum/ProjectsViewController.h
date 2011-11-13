@@ -10,16 +10,8 @@
 #import <RestKit/RestKit.h>
 #import "Project.h"
 #import "SugarPondLoginDelegate.h"
-#import "DetailViewController.h"
+#import "AuthenticatedTableViewController.h"
 
-@interface ProjectsViewController : UITableViewController<RKObjectLoaderDelegate> {
-    NSArray *projects;
-}
-
-@property (nonatomic, assign) IBOutlet UINavigationController *navigationController;
-@property (nonatomic, assign) IBOutlet DetailViewController *detailViewController;
-
--(void)reloadProjects;
--(void)loadProjectsFromDatastore;
+@interface ProjectsViewController : AuthenticatedTableViewController
 
 @end

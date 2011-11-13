@@ -7,6 +7,7 @@
 //
 
 #import "DocTemplate.h"
+#import "Doc.h"
 
 @implementation DocTemplate
 
@@ -33,6 +34,14 @@
 
 +(NSString *)primaryKeyProperty {
     return @"identifier";
+}
+
+- (NSArray *)docsOrderedByPosition {
+    NSFetchRequest *docFetchRequest = [Doc fetchRequest];
+    [docFetchRequest setPredicate:[NSPredicate predicateWithFormat:@"projectId = %@ and docTemplateId = %@", self.projectId, self.identifier]];
+    [docFetchRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"position" ascending:YES]]];
+    
+    return [Doc objectsWithFetchRequest:docFetchRequest];
 }
 
 @end

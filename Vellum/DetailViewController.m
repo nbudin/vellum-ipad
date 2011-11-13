@@ -8,9 +8,16 @@
 
 #import "DetailViewController.h"
 #import "Attr.h"
+#import "AttrCell.h"
+#import "DocContentCell.h"
+
+@interface DetailViewController ()
+@property (strong, nonatomic) UIPopoverController *popoverController;
+- (void)configureView;
+@end
 
 @implementation DetailViewController
-@synthesize toolbar=_toolbar, navigatorButton=_navigatorButton, doc=_doc, tableView=_tableView;
+@synthesize toolbar=_toolbar, doc=_doc, tableView=_tableView, popoverController=_myPopoverController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,12 +36,16 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (Doc *)doc {
-    return _doc;
+-(void)setDoc:(Doc *)doc {
+    _doc = doc;
+    [self reloadDoc];
 }
 
 -(void)reloadDoc {
-    [[RKObjectManager sharedManager] getObject:_doc delegate:self];
+    if (self.doc != nil) {
+        NSLog(@"Doc ID %@, project ID %@", self.doc.identifier, self.doc.project.identifier);
+        [[RKObjectManager sharedManager] getObject:self.doc delegate:self];
+    }
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
@@ -46,8 +57,7 @@
 - (void)loadDocFromDatastore {
     NSNumber *identifier = _doc.identifier;
     
-    [_doc release];
-    _doc = [[Doc objectWithPrimaryKeyValue:identifier] retain];
+    _doc = [Doc objectWithPrimaryKeyValue:identifier];
     NSLog(@"Loaded doc with attrs: %@", [_doc attrs]);
 }
 
@@ -62,8 +72,6 @@
 {
     [super viewDidUnload];
     
-    [_toolbar release];
-    [_navigatorButton release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -76,16 +84,16 @@
     
     NSMutableArray *items = [self.toolbar.items mutableCopy];
     [items insertObject:barButtonItem atIndex:0];
-    [self.toolbar setItems:items animated:NO];
-    [items release];
+    [self.toolbar setItems:items animated:YES];
+    self.popoverController = pc;
 }
 
 - (void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
     
     NSMutableArray *items = [self.toolbar.items mutableCopy];
     [items removeObject:barButtonItem];
-    [self.toolbar setItems:items animated:NO];
-    [items release];
+    [self.toolbar setItems:items animated:YES];
+    self.popoverController = nil;
 }
 
 #pragma mark - Table view data source
@@ -109,34 +117,29 @@
         return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (DetailViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BOOL isAttr = ([indexPath indexAtPosition:0] == 0);
     
-    static NSString *CellIdentifier;
-    UITableViewCellStyle style;
     if (isAttr) {
-        CellIdentifier = [NSString stringWithFormat:@"attr_%d", [indexPath indexAtPosition:1]];
-        style = UITableViewCellStyleValue2;
+        AttrCell *attrCell = [tableView dequeueReusableCellWithIdentifier:@"AttrCell"];
+        attrCell.attr = [self.doc.attrs objectAtIndex:[indexPath indexAtPosition:1]];
+        return attrCell;
     } else {
-        CellIdentifier = @"content";
-        style = UITableViewCellStyleDefault;
+        DocContentCell *docContentCell = [tableView dequeueReusableCellWithIdentifier:@"DocContentCell"];
+        docContentCell.doc = self.doc;
+        return docContentCell;
     }
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DetailViewCell *cell = (DetailViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    CGFloat desiredHeight = [cell scrollHeight] + cell.webView.frame.origin.y * 2;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:style reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
-    if (isAttr) {
-        Attr *attr = [_doc.attrs objectAtIndex:[indexPath indexAtPosition:1]];
-        [cell.textLabel setText:[attr name]];
-        [cell.detailTextLabel setText:[attr value]];
-    } else {
-        [cell.textLabel setText:[_doc content]];
-    }
-    
-    return cell;
+    if (desiredHeight > 38)
+        return desiredHeight;
+    else
+        return 38;
 }
 
 /*
@@ -179,17 +182,5 @@
  */
 
 #pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
-}
 
 @end

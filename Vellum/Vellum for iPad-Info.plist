@@ -30,10 +30,6 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMainNibFile</key>
-	<string>MainWindow</string>
-	<key>NSMainNibFile~ipad</key>
-	<string>MainWindow-iPad</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>LiberationSerif-Regular.ttf</string>
@@ -41,6 +37,8 @@
 		<string>LiberationSerif-Italic.ttf</string>
 		<string>LiberationSerif-BoldItalic.ttf</string>
 	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>Vellum</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

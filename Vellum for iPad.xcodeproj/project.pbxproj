@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		66124E91139FCE7A0066A45B /* DocsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66124E8F139FCE7A0066A45B /* DocsListViewController.m */; };
-		66124E92139FCE7A0066A45B /* DocsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66124E90139FCE7A0066A45B /* DocsListViewController.xib */; };
 		66124E95139FCEB10066A45B /* Doc.m in Sources */ = {isa = PBXBuildFile; fileRef = 66124E94139FCEB10066A45B /* Doc.m */; };
 		66124E98139FD4440066A45B /* Attr.m in Sources */ = {isa = PBXBuildFile; fileRef = 66124E97139FD4440066A45B /* Attr.m */; };
 		6619FCD313A0015900D63BB2 /* DocTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6619FCD213A0015900D63BB2 /* DocTemplate.m */; };
 		662E674F13A26D6B002997A0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 662E674D13A26D6B002997A0 /* DetailViewController.m */; };
-		662E675213A2741C002997A0 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662E675113A2741C002997A0 /* DetailViewController.xib */; };
+		6635CC4F13BA5E7800E8D018 /* AttrCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6635CC4E13BA5E7800E8D018 /* AttrCell.m */; };
+		6635CC5213BA5E8400E8D018 /* DocContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6635CC5113BA5E8400E8D018 /* DocContentCell.m */; };
+		6652B66A13B5101B00A0E123 /* ProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6652B66913B5101B00A0E123 /* ProjectCell.m */; };
 		666E95EB13A680B40056834D /* Vellum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 666E95E913A680B40056834D /* Vellum.xcdatamodeld */; };
+		667958AD13B92B7700C6FB9F /* DocCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 667958AC13B92B7700C6FB9F /* DocCell.m */; };
 		668E7AC51399612300A0E5E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7AC41399612300A0E5E0 /* UIKit.framework */; };
 		668E7AC71399612300A0E5E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7AC61399612300A0E5E0 /* Foundation.framework */; };
 		668E7AC91399612300A0E5E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7AC81399612300A0E5E0 /* CoreGraphics.framework */; };
@@ -22,8 +24,6 @@
 		668E7AD21399612300A0E5E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E7AD11399612300A0E5E0 /* main.m */; };
 		668E7AD51399612300A0E5E0 /* VellumAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E7AD41399612300A0E5E0 /* VellumAppDelegate.m */; };
 		668E7ADB1399612300A0E5E0 /* ProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E7ADA1399612300A0E5E0 /* ProjectsViewController.m */; };
-		668E7ADE1399612300A0E5E0 /* ProjectsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668E7ADC1399612300A0E5E0 /* ProjectsViewController.xib */; };
-		668E7AE71399616400A0E5E0 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668E7AE51399616400A0E5E0 /* MainWindow-iPad.xib */; };
 		668E7B2B1399634D00A0E5E0 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B271399634D00A0E5E0 /* libRestKitNetwork.a */; };
 		668E7B2C1399634D00A0E5E0 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B281399634D00A0E5E0 /* libRestKitObjectMapping.a */; };
 		668E7B2D1399634D00A0E5E0 /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B291399634D00A0E5E0 /* libRestKitSupport.a */; };
@@ -34,8 +34,12 @@
 		668E7B411399643600A0E5E0 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B401399643600A0E5E0 /* libRestKitCoreData.a */; };
 		668E7B431399644600A0E5E0 /* libRestKitJSONParserYAJL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7B421399644600A0E5E0 /* libRestKitJSONParserYAJL.a */; };
 		668E7B471399660200A0E5E0 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E7B461399660200A0E5E0 /* Project.m */; };
-		668E7B491399686E00A0E5E0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668E7B481399686E00A0E5E0 /* LoginViewController.xib */; };
-		668E7B4C13996B8800A0E5E0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E7B4B13996B8800A0E5E0 /* LoginViewController.m */; };
+		668E7B491399686E00A0E5E0 /* SugarPondLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668E7B481399686E00A0E5E0 /* SugarPondLoginViewController.xib */; };
+		668E7B4C13996B8800A0E5E0 /* SugarPondLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E7B4B13996B8800A0E5E0 /* SugarPondLoginViewController.m */; };
+		66B84AF7145F9268003F43C6 /* DetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B84AF6145F9268003F43C6 /* DetailViewCell.m */; };
+		66CE30A313B4DB96008A274B /* Vellum.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66CE30A213B4DB96008A274B /* Vellum.storyboard */; };
+		66CE30DA13B4E7C3008A274B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CE30D913B4E7C3008A274B /* Accounts.framework */; };
+		66CE30DD13B4F930008A274B /* AuthenticatedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CE30DC13B4F930008A274B /* AuthenticatedTableViewController.m */; };
 		66D2C81B139E9E5C00428452 /* sugarpond.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D2C81A139E9E5C00428452 /* sugarpond.png */; };
 		66D2C821139E9EFB00428452 /* LiberationSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66D2C81D139E9EFB00428452 /* LiberationSerif-Bold.ttf */; };
 		66D2C822139E9EFB00428452 /* LiberationSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66D2C81E139E9EFB00428452 /* LiberationSerif-BoldItalic.ttf */; };
@@ -125,19 +129,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		66124E8E139FCE7A0066A45B /* DocsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocsListViewController.h; sourceTree = "<group>"; };
-		66124E8F139FCE7A0066A45B /* DocsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocsListViewController.m; sourceTree = "<group>"; };
-		66124E90139FCE7A0066A45B /* DocsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocsListViewController.xib; sourceTree = "<group>"; };
+		66124E8E139FCE7A0066A45B /* DocsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocsListViewController.h; path = Vellum/DocsListViewController.h; sourceTree = "<group>"; };
+		66124E8F139FCE7A0066A45B /* DocsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocsListViewController.m; path = Vellum/DocsListViewController.m; sourceTree = "<group>"; };
 		66124E93139FCEB10066A45B /* Doc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doc.h; sourceTree = "<group>"; };
 		66124E94139FCEB10066A45B /* Doc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doc.m; sourceTree = "<group>"; };
 		66124E96139FD4440066A45B /* Attr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attr.h; sourceTree = "<group>"; };
 		66124E97139FD4440066A45B /* Attr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attr.m; sourceTree = "<group>"; };
 		6619FCD113A0015900D63BB2 /* DocTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocTemplate.h; sourceTree = "<group>"; };
 		6619FCD213A0015900D63BB2 /* DocTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocTemplate.m; sourceTree = "<group>"; };
-		662E674C13A26D6B002997A0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		662E674D13A26D6B002997A0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		662E675113A2741C002997A0 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		662E674C13A26D6B002997A0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Vellum/DetailViewController.h; sourceTree = "<group>"; };
+		662E674D13A26D6B002997A0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = Vellum/DetailViewController.m; sourceTree = "<group>"; };
+		6635CC4D13BA5E7800E8D018 /* AttrCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttrCell.h; sourceTree = "<group>"; };
+		6635CC4E13BA5E7800E8D018 /* AttrCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttrCell.m; sourceTree = "<group>"; };
+		6635CC5013BA5E8400E8D018 /* DocContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocContentCell.h; sourceTree = "<group>"; };
+		6635CC5113BA5E8400E8D018 /* DocContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocContentCell.m; sourceTree = "<group>"; };
+		6652B66813B5101B00A0E123 /* ProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectCell.h; path = Vellum/ProjectCell.h; sourceTree = "<group>"; };
+		6652B66913B5101B00A0E123 /* ProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectCell.m; path = Vellum/ProjectCell.m; sourceTree = "<group>"; };
 		666E95EA13A680B40056834D /* Vellum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vellum.xcdatamodel; sourceTree = "<group>"; };
+		667958AB13B92B7700C6FB9F /* DocCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocCell.h; path = Vellum/DocCell.h; sourceTree = "<group>"; };
+		667958AC13B92B7700C6FB9F /* DocCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocCell.m; path = Vellum/DocCell.m; sourceTree = "<group>"; };
 		668E7AC01399612300A0E5E0 /* Vellum for iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vellum for iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		668E7AC41399612300A0E5E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		668E7AC61399612300A0E5E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -148,10 +158,8 @@
 		668E7AD11399612300A0E5E0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		668E7AD31399612300A0E5E0 /* VellumAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VellumAppDelegate.h; sourceTree = "<group>"; };
 		668E7AD41399612300A0E5E0 /* VellumAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VellumAppDelegate.m; sourceTree = "<group>"; };
-		668E7AD91399612300A0E5E0 /* ProjectsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectsViewController.h; sourceTree = "<group>"; };
-		668E7ADA1399612300A0E5E0 /* ProjectsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectsViewController.m; sourceTree = "<group>"; };
-		668E7ADD1399612300A0E5E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ProjectsViewController.xib; sourceTree = "<group>"; };
-		668E7AE61399616400A0E5E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Vellum/iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		668E7AD91399612300A0E5E0 /* ProjectsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProjectsViewController.h; path = Vellum/ProjectsViewController.h; sourceTree = "<group>"; };
+		668E7ADA1399612300A0E5E0 /* ProjectsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProjectsViewController.m; path = Vellum/ProjectsViewController.m; sourceTree = "<group>"; };
 		668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		668E7B261399634D00A0E5E0 /* libRestKitJSONParserJSONKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserJSONKit.a; sourceTree = SOURCE_ROOT; };
 		668E7B271399634D00A0E5E0 /* libRestKitNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitNetwork.a; sourceTree = SOURCE_ROOT; };
@@ -166,9 +174,15 @@
 		668E7B421399644600A0E5E0 /* libRestKitJSONParserYAJL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRestKitJSONParserYAJL.a; sourceTree = SOURCE_ROOT; };
 		668E7B451399660200A0E5E0 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		668E7B461399660200A0E5E0 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
-		668E7B481399686E00A0E5E0 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		668E7B4A13996B8800A0E5E0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		668E7B4B13996B8800A0E5E0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		668E7B481399686E00A0E5E0 /* SugarPondLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SugarPondLoginViewController.xib; sourceTree = "<group>"; };
+		668E7B4A13996B8800A0E5E0 /* SugarPondLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SugarPondLoginViewController.h; sourceTree = "<group>"; };
+		668E7B4B13996B8800A0E5E0 /* SugarPondLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SugarPondLoginViewController.m; sourceTree = "<group>"; };
+		66B84AF5145F9268003F43C6 /* DetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewCell.h; sourceTree = "<group>"; };
+		66B84AF6145F9268003F43C6 /* DetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewCell.m; sourceTree = "<group>"; };
+		66CE30A213B4DB96008A274B /* Vellum.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Vellum.storyboard; sourceTree = "<group>"; };
+		66CE30D913B4E7C3008A274B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		66CE30DB13B4F930008A274B /* AuthenticatedTableViewController.h */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = AuthenticatedTableViewController.h; path = Vellum/AuthenticatedTableViewController.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
+		66CE30DC13B4F930008A274B /* AuthenticatedTableViewController.m */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; name = AuthenticatedTableViewController.m; path = Vellum/AuthenticatedTableViewController.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
 		66D2C81A139E9E5C00428452 /* sugarpond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sugarpond.png; path = "../../journey-marketing/sugarpond.png"; sourceTree = "<group>"; };
 		66D2C81D139E9EFB00428452 /* LiberationSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LiberationSerif-Bold.ttf"; sourceTree = "<group>"; };
 		66D2C81E139E9EFB00428452 /* LiberationSerif-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LiberationSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -183,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66CE30DA13B4E7C3008A274B /* Accounts.framework in Frameworks */,
 				66D2C826139EBD5300428452 /* QuartzCore.framework in Frameworks */,
 				668E7B431399644600A0E5E0 /* libRestKitJSONParserYAJL.a in Frameworks */,
 				668E7B411399643600A0E5E0 /* libRestKitCoreData.a in Frameworks */,
@@ -205,25 +220,15 @@
 		668E7AB51399612200A0E5E0 = {
 			isa = PBXGroup;
 			children = (
-				66D2C825139EBD5300428452 /* QuartzCore.framework */,
+				66CE30A213B4DB96008A274B /* Vellum.storyboard */,
 				66D2C81C139E9EE700428452 /* Resources */,
+				66EE687013BA41E10020F995 /* Controllers */,
+				66EE687813BA42420020F995 /* Table Cells */,
 				668E7B44139965EA00A0E5E0 /* Models */,
-				668E7B421399644600A0E5E0 /* libRestKitJSONParserYAJL.a */,
-				668E7B401399643600A0E5E0 /* libRestKitCoreData.a */,
-				668E7B2E1399634D00A0E5E0 /* CFNetwork.framework */,
-				668E7B2F1399634D00A0E5E0 /* CoreData.framework */,
-				668E7B301399634D00A0E5E0 /* libxml2.dylib */,
-				668E7B311399634D00A0E5E0 /* MobileCoreServices.framework */,
-				668E7B321399634D00A0E5E0 /* SystemConfiguration.framework */,
-				668E7B261399634D00A0E5E0 /* libRestKitJSONParserJSONKit.a */,
-				668E7B271399634D00A0E5E0 /* libRestKitNetwork.a */,
-				668E7B281399634D00A0E5E0 /* libRestKitObjectMapping.a */,
-				668E7B291399634D00A0E5E0 /* libRestKitSupport.a */,
 				668E7AE41399616100A0E5E0 /* iPad */,
-				668E7ACA1399612300A0E5E0 /* Vellum */,
+				668E7ACA1399612300A0E5E0 /* Other Code */,
 				668E7AC31399612300A0E5E0 /* Frameworks */,
 				668E7AC11399612300A0E5E0 /* Products */,
-				668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,6 +243,20 @@
 		668E7AC31399612300A0E5E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				668E7AFC139962A600A0E5E0 /* RestKit.xcodeproj */,
+				66CE30D913B4E7C3008A274B /* Accounts.framework */,
+				66D2C825139EBD5300428452 /* QuartzCore.framework */,
+				668E7B421399644600A0E5E0 /* libRestKitJSONParserYAJL.a */,
+				668E7B401399643600A0E5E0 /* libRestKitCoreData.a */,
+				668E7B2E1399634D00A0E5E0 /* CFNetwork.framework */,
+				668E7B2F1399634D00A0E5E0 /* CoreData.framework */,
+				668E7B301399634D00A0E5E0 /* libxml2.dylib */,
+				668E7B311399634D00A0E5E0 /* MobileCoreServices.framework */,
+				668E7B321399634D00A0E5E0 /* SystemConfiguration.framework */,
+				668E7B261399634D00A0E5E0 /* libRestKitJSONParserJSONKit.a */,
+				668E7B271399634D00A0E5E0 /* libRestKitNetwork.a */,
+				668E7B281399634D00A0E5E0 /* libRestKitObjectMapping.a */,
+				668E7B291399634D00A0E5E0 /* libRestKitSupport.a */,
 				668E7AC41399612300A0E5E0 /* UIKit.framework */,
 				668E7AC61399612300A0E5E0 /* Foundation.framework */,
 				668E7AC81399612300A0E5E0 /* CoreGraphics.framework */,
@@ -245,27 +264,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		668E7ACA1399612300A0E5E0 /* Vellum */ = {
+		668E7ACA1399612300A0E5E0 /* Other Code */ = {
 			isa = PBXGroup;
 			children = (
-				668E7AE51399616400A0E5E0 /* MainWindow-iPad.xib */,
 				668E7AD31399612300A0E5E0 /* VellumAppDelegate.h */,
 				668E7AD41399612300A0E5E0 /* VellumAppDelegate.m */,
-				668E7AD91399612300A0E5E0 /* ProjectsViewController.h */,
-				668E7ADA1399612300A0E5E0 /* ProjectsViewController.m */,
-				668E7ADC1399612300A0E5E0 /* ProjectsViewController.xib */,
 				668E7ACB1399612300A0E5E0 /* Supporting Files */,
-				668E7B481399686E00A0E5E0 /* LoginViewController.xib */,
-				668E7B4A13996B8800A0E5E0 /* LoginViewController.h */,
-				668E7B4B13996B8800A0E5E0 /* LoginViewController.m */,
+				668E7B481399686E00A0E5E0 /* SugarPondLoginViewController.xib */,
+				668E7B4A13996B8800A0E5E0 /* SugarPondLoginViewController.h */,
+				668E7B4B13996B8800A0E5E0 /* SugarPondLoginViewController.m */,
 				66D2C827139EC3EF00428452 /* SugarPondLoginDelegate.h */,
-				66124E8E139FCE7A0066A45B /* DocsListViewController.h */,
-				66124E8F139FCE7A0066A45B /* DocsListViewController.m */,
-				66124E90139FCE7A0066A45B /* DocsListViewController.xib */,
-				662E674C13A26D6B002997A0 /* DetailViewController.h */,
-				662E674D13A26D6B002997A0 /* DetailViewController.m */,
-				662E675113A2741C002997A0 /* DetailViewController.xib */,
 			);
+			name = "Other Code";
 			path = Vellum;
 			sourceTree = "<group>";
 		};
@@ -330,6 +340,38 @@
 				66D2C81A139E9E5C00428452 /* sugarpond.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		66EE687013BA41E10020F995 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				66CE30DB13B4F930008A274B /* AuthenticatedTableViewController.h */,
+				66CE30DC13B4F930008A274B /* AuthenticatedTableViewController.m */,
+				668E7AD91399612300A0E5E0 /* ProjectsViewController.h */,
+				668E7ADA1399612300A0E5E0 /* ProjectsViewController.m */,
+				66124E8E139FCE7A0066A45B /* DocsListViewController.h */,
+				66124E8F139FCE7A0066A45B /* DocsListViewController.m */,
+				662E674C13A26D6B002997A0 /* DetailViewController.h */,
+				662E674D13A26D6B002997A0 /* DetailViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		66EE687813BA42420020F995 /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6652B66813B5101B00A0E123 /* ProjectCell.h */,
+				6652B66913B5101B00A0E123 /* ProjectCell.m */,
+				667958AB13B92B7700C6FB9F /* DocCell.h */,
+				667958AC13B92B7700C6FB9F /* DocCell.m */,
+				6635CC4D13BA5E7800E8D018 /* AttrCell.h */,
+				6635CC4E13BA5E7800E8D018 /* AttrCell.m */,
+				6635CC5013BA5E8400E8D018 /* DocContentCell.h */,
+				6635CC5113BA5E8400E8D018 /* DocContentCell.m */,
+				66B84AF5145F9268003F43C6 /* DetailViewCell.h */,
+				66B84AF6145F9268003F43C6 /* DetailViewCell.m */,
+			);
+			name = "Table Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,16 +505,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				668E7ACF1399612300A0E5E0 /* InfoPlist.strings in Resources */,
-				668E7ADE1399612300A0E5E0 /* ProjectsViewController.xib in Resources */,
-				668E7AE71399616400A0E5E0 /* MainWindow-iPad.xib in Resources */,
-				668E7B491399686E00A0E5E0 /* LoginViewController.xib in Resources */,
+				668E7B491399686E00A0E5E0 /* SugarPondLoginViewController.xib in Resources */,
 				66D2C81B139E9E5C00428452 /* sugarpond.png in Resources */,
 				66D2C821139E9EFB00428452 /* LiberationSerif-Bold.ttf in Resources */,
 				66D2C822139E9EFB00428452 /* LiberationSerif-BoldItalic.ttf in Resources */,
 				66D2C823139E9EFB00428452 /* LiberationSerif-Italic.ttf in Resources */,
 				66D2C824139E9EFB00428452 /* LiberationSerif-Regular.ttf in Resources */,
-				66124E92139FCE7A0066A45B /* DocsListViewController.xib in Resources */,
-				662E675213A2741C002997A0 /* DetailViewController.xib in Resources */,
+				66CE30A313B4DB96008A274B /* Vellum.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,13 +526,19 @@
 				668E7AD51399612300A0E5E0 /* VellumAppDelegate.m in Sources */,
 				668E7ADB1399612300A0E5E0 /* ProjectsViewController.m in Sources */,
 				668E7B471399660200A0E5E0 /* Project.m in Sources */,
-				668E7B4C13996B8800A0E5E0 /* LoginViewController.m in Sources */,
+				668E7B4C13996B8800A0E5E0 /* SugarPondLoginViewController.m in Sources */,
 				66124E91139FCE7A0066A45B /* DocsListViewController.m in Sources */,
 				66124E95139FCEB10066A45B /* Doc.m in Sources */,
 				66124E98139FD4440066A45B /* Attr.m in Sources */,
 				6619FCD313A0015900D63BB2 /* DocTemplate.m in Sources */,
 				662E674F13A26D6B002997A0 /* DetailViewController.m in Sources */,
 				666E95EB13A680B40056834D /* Vellum.xcdatamodeld in Sources */,
+				66CE30DD13B4F930008A274B /* AuthenticatedTableViewController.m in Sources */,
+				6652B66A13B5101B00A0E123 /* ProjectCell.m in Sources */,
+				667958AD13B92B7700C6FB9F /* DocCell.m in Sources */,
+				6635CC4F13BA5E7800E8D018 /* AttrCell.m in Sources */,
+				6635CC5213BA5E8400E8D018 /* DocContentCell.m in Sources */,
+				66B84AF7145F9268003F43C6 /* DetailViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,23 +559,6 @@
 				668E7ACE1399612300A0E5E0 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		668E7ADC1399612300A0E5E0 /* ProjectsViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				668E7ADD1399612300A0E5E0 /* en */,
-			);
-			name = ProjectsViewController.xib;
-			sourceTree = "<group>";
-		};
-		668E7AE51399616400A0E5E0 /* MainWindow-iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				668E7AE61399616400A0E5E0 /* en */,
-			);
-			name = "MainWindow-iPad.xib";
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -574,13 +602,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vellum/Vellum for iPad-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
 				INFOPLIST_FILE = "Vellum/Vellum for iPad-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
 					"\"$(SRCROOT)\"",
@@ -599,12 +629,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vellum/Vellum for iPad-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
 				INFOPLIST_FILE = "Vellum/Vellum for iPad-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
 					"\"$(SRCROOT)\"",

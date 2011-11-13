@@ -19,5 +19,6 @@
 @property (nonatomic, retain) Project *project;
 @property (nonatomic, retain) NSSet *docs;
 
+-(NSArray *)docsOrderedByPosition;
 
 @end

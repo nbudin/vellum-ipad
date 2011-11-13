@@ -12,17 +12,15 @@
 #import "Doc.h"
 #import "DocTemplate.h"
 #import "DetailViewController.h"
+#import "AuthenticatedTableViewController.h"
 
-@interface DocsListViewController : UITableViewController<RKObjectLoaderDelegate> {
+@interface DocsListViewController : AuthenticatedTableViewController {
     NSDictionary *_docsByTemplate;
     NSArray *_docTemplates;
 }
 
 @property (nonatomic, assign) Project *project;
-@property (nonatomic, assign) DetailViewController *detailViewController;
 
--(void)reloadDocs;
 -(Doc *)docForIndexPath:(NSIndexPath *)indexPath;
--(void)loadDocsFromDatastore;
 
 @end

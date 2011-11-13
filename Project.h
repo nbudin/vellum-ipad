@@ -17,5 +17,6 @@
 @property (nonatomic, retain) NSSet* docTemplates;
 @property (nonatomic, retain) NSSet* docs;
 
+-(NSArray *)docTemplatesOrderedByName;
 
 @end

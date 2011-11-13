@@ -7,60 +7,54 @@
 //
 
 #import "DocsListViewController.h"
+#import "DocCell.h"
 
 @implementation DocsListViewController
 
-@synthesize project=_project, detailViewController=_detailViewController;
+@synthesize project=_project;
 
-- (void)reloadDocs {
-    NSString *resourcePath = [NSString stringWithFormat:@"/projects/%@/doc_templates.json",
-                              self.project.identifier];
-    
-    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:resourcePath
-                                                   objectClass:[DocTemplate class] 
-                                                      delegate:self];
-}
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
-    if ([objectLoader.resourcePath hasSuffix:@"/docs.json"]) {
-        NSLog(@"Loaded docs: %@\n", objects);
-        
-        [self loadDocsFromDatastore];
-        [self.tableView reloadData];
-    } else if ([objectLoader.resourcePath hasSuffix:@"/doc_templates.json"]) {
-        NSLog(@"Loaded doc templates: %@\n", objects);
-
+- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)loadedObjects {
+    if ([objectLoader.resourcePath hasSuffix:@"/doc_templates.json"]) {
         NSString *resourcePath = [NSString stringWithFormat:@"/projects/%@/docs.json",
                                   self.project.identifier];
-        
         [[RKObjectManager sharedManager] loadObjectsAtResourcePath:resourcePath
                                                        objectClass:[Doc class] 
                                                           delegate:self];
+    } else if ([objectLoader.resourcePath hasSuffix:@"/docs.json"]) {
+        // docs.json doesn't include project ID, so we'll bang it in
+        // manually.
+        
+        for (Doc *doc in loadedObjects) {
+            doc.projectId = self.project.identifier;
+            doc.project = self.project;
+        }
     }
+    
+    [super objectLoader:objectLoader didLoadObjects:loadedObjects];
 }
 
-- (void)loadDocsFromDatastore {
-    [_docTemplates release];
-    _docTemplates = [[[_project.docTemplates allObjects] sortedArrayUsingSelector:@selector(name)] retain];
+-(void) setProject:(Project *)project {
+    _project = project;
+    [self reloadObjects];
+}
+
+-(void) loadObjectsFromDatastore {
+    [super loadObjectsFromDatastore];
     
-    [_docsByTemplate release];
+    _docTemplates = [self.project docTemplatesOrderedByName];
     _docsByTemplate = [[NSMutableDictionary alloc] initWithCapacity:[_docTemplates count]];
     
     for (DocTemplate *tmpl in _docTemplates) {
-        NSArray *docs = [[tmpl.docs allObjects] sortedArrayUsingSelector:@selector(position)];
-        
-        [_docsByTemplate setValue:docs forKey:[tmpl.identifier stringValue]];
+        [_docsByTemplate setValue:[tmpl docsOrderedByPosition] forKey:[tmpl.identifier stringValue]];
     }
-    
-    [_docsByTemplate retain];
 }
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
-    NSLog(@"Error loading docs in project %@: %@\n", self.project.identifier, error);
+-(NSString *)resourcePath {
+    return [NSString stringWithFormat:@"/projects/%@/doc_templates.json", self.project.identifier];
 }
 
-- (void)objectLoaderDidLoadUnexpectedResponse:(RKObjectLoader *)objectLoader {
-    NSLog(@"Got unexpected response: %@\n", [objectLoader response]);
++(Class) objectClass {
+    return [DocTemplate class];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -152,19 +146,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Doc *doc = [self docForIndexPath:indexPath];
-    NSString *CellIdentifier = [doc.identifier stringValue];
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-    }
-    
-    [[cell textLabel] setText:[doc name]];
-    [[cell detailTextLabel] setText:[doc blurb]];
-    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    
-    // Configure the cell...
+    DocCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DocCell"];
+    cell.doc = [self docForIndexPath:indexPath];
     
     return cell;
 }
@@ -174,53 +157,13 @@
     return [[_docTemplates objectAtIndex:section] name];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Doc *doc = [self docForIndexPath:indexPath];
-    doc.project = _project;
-    self.detailViewController.doc = doc;
-    [self.detailViewController reloadDoc];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"docSelected"]) {
+        DetailViewController *detailViewController = segue.destinationViewController;
+        detailViewController.doc = [self docForIndexPath:[self.tableView indexPathForSelectedRow]];
+    }
 }
 
 @end

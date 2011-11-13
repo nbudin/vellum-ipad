@@ -6,11 +6,11 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "SugarPondLoginViewController.h"
 #import <RestKit/Support/RKJSONParser.h>
 #import <QuartzCore/CAGradientLayer.h>
 
-@implementation LoginViewController
+@implementation SugarPondLoginViewController
 
 @synthesize loginLabelTop;
 @synthesize loginLabelBottom;
@@ -19,28 +19,27 @@
 @synthesize activityIndicator;
 @synthesize loginDelegate;
 
+NSString *SugarPondLoginCompleted = @"SugarPondLoginCompleted";
+NSString *SugarPondLoginFailed = @"SugarPondLoginFailed";
+
+static SugarPondLoginViewController *sharedInstance = nil;
+
++(SugarPondLoginViewController *)sharedInstance {
+    if (sharedInstance == nil) {
+        sharedInstance = [[SugarPondLoginViewController alloc] initWithNibName:@"SugarPondLoginViewController" bundle:nil];
+    }
+    return sharedInstance;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // custom init
+        self.modalPresentationStyle = UIModalPresentationFormSheet;
     }
     return self;
 }
 
-- (void)dealloc
-{
-    [email release];
-    [password release];
-    [webView release];
-    [webView release];
-    [loginLabelTop release];
-    [loginLabelBottom release];
-    [loginForm release];
-    [activityIndicator release];
-    [progressLabel release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -65,11 +64,10 @@
     [super viewDidLoad];
     
     CAGradientLayer *layer = [[CAGradientLayer alloc] init];
-    [layer autorelease];
     
     layer.colors = [NSArray arrayWithObjects:
-                    (id)[[UIColor colorWithRed:1.0 green:1.0 blue:0.5 alpha:1.0] CGColor],
-                    (id)[[UIColor whiteColor] CGColor],
+                    objc_unretainedObject([[UIColor colorWithRed:1.0 green:1.0 blue:0.5 alpha:1.0] CGColor]),
+                    objc_unretainedObject([[UIColor whiteColor] CGColor]),
                     nil];
     
     layer.locations = [NSArray arrayWithObjects:
@@ -77,7 +75,7 @@
                        [NSNumber numberWithFloat:1.0],
                        nil];
     
-    layer.frame = self.view.layer.bounds;
+    layer.frame = CGRectMake(0, 0, 540, 620);
     layer.zPosition = -100.0;
     [self.view.layer addSublayer:layer];
     
@@ -89,13 +87,9 @@
 
 - (void)viewDidUnload
 {
-    [email release];
     email = nil;
-    [password release];
     password = nil;
-    [webView release];
     webView = nil;
-    [webView release];
     webView = nil;
     [self setLoginLabelTop:nil];
     [self setLoginLabelBottom:nil];
@@ -105,6 +99,7 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -137,7 +132,7 @@
         progressLabel.hidden = true;
         [progressLabel setNeedsDisplay];
         
-        [loginDelegate loginSucceeded];
+        [[NSNotificationCenter defaultCenter] postNotificationName:SugarPondLoginCompleted object:self];
     } else if ([[url host] isEqualToString:@"accounts.sugarpond.net"]) {
         RKJSONParser *parser = [RKJSONParser new];
         
@@ -178,4 +173,17 @@
         return YES;
     }
 }
+
++ (BOOL) loggedIn {
+    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:[[RKObjectManager sharedManager] client].baseURL]];
+    
+    for (NSHTTPCookie *cookie in cookies) {
+        if ([[cookie name] isEqualToString:@"_vellum_session"]) {
+            return YES;
+        }
+    }
+
+    return NO;
+}
+
 @end

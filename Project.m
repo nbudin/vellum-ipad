@@ -7,7 +7,7 @@
 //
 
 #import "Project.h"
-
+#import "DocTemplate.h"
 
 @implementation Project
 
@@ -26,6 +26,14 @@
 
 +(NSString *)primaryKeyProperty {
     return @"identifier";
+}
+
+-(NSArray *)docTemplatesOrderedByName {
+    NSFetchRequest *fetchRequest = [DocTemplate fetchRequest];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"projectId = %@", self.identifier]];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+    
+    return [DocTemplate objectsWithFetchRequest:fetchRequest];
 }
 
 @end
