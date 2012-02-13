@@ -26,6 +26,16 @@
 //    self.window.rootViewController = self.splitViewController;
     [self.window makeKeyAndVisible];
     
+    // load cookies from storage
+    NSDictionary *cookieDict = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"vellum_cookies"];
+    for (NSString *url in cookieDict.keyEnumerator) {
+        NSDictionary *cookieProperties = [cookieDict valueForKey:url];
+        NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieProperties];
+        NSArray *cookieArray = [NSArray arrayWithObject:cookie];
+        
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookies:cookieArray forURL:[NSURL URLWithString:url] mainDocumentURL:nil];
+    }
+    
     RKRailsRouter *router = [[RKRailsRouter alloc] init];
     [router setModelName:@"project" forClass:[Project class]];
     [router routeClass:[Project class] toResourcePath:@"/projects.json" forMethod:RKRequestMethodGET];

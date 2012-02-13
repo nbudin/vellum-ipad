@@ -132,6 +132,16 @@ static SugarPondLoginViewController *sharedInstance = nil;
         progressLabel.hidden = true;
         [progressLabel setNeedsDisplay];
         
+        // save cookies for next session
+        NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:url];
+        for (NSHTTPCookie *cookie in cookies) {
+            if ([cookie.name isEqualToString:@"_vellum_session"]) {
+                NSMutableDictionary *cookieDict = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] dictionaryForKey:@"vellum_cookies"]];
+                [cookieDict setValue:cookie.properties forKey:[url absoluteString]];
+                [[NSUserDefaults standardUserDefaults] setObject:cookieDict forKey:@"vellum_cookies"];
+            }
+        }
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:SugarPondLoginCompleted object:self];
     } else if ([[url host] isEqualToString:@"accounts.sugarpond.net"]) {
         RKJSONParser *parser = [RKJSONParser new];

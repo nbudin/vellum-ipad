@@ -9,18 +9,20 @@
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
 #import "Doc.h"
+#import "DocView.h"
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, RKObjectLoaderDelegate> {
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, UIWebViewDelegate, RKObjectLoaderDelegate> {
     
     UIToolbar *_toolbar;
     UIBarButtonItem *_navigatorButton;
-    UITableView *_tableView;
+    DocView *_docView;
     
     Doc *_doc;
 }
 
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet DocView *docView;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) Doc *doc;
 
 -(void)reloadDoc;

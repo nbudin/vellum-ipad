@@ -16,6 +16,7 @@
 		6635CC5213BA5E8400E8D018 /* DocContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6635CC5113BA5E8400E8D018 /* DocContentCell.m */; };
 		6652B66A13B5101B00A0E123 /* ProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6652B66913B5101B00A0E123 /* ProjectCell.m */; };
 		666E95EB13A680B40056834D /* Vellum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 666E95E913A680B40056834D /* Vellum.xcdatamodeld */; };
+		6671ED7314E9BC61000E13BE /* DocView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6671ED7214E9BC61000E13BE /* DocView.m */; };
 		667958AD13B92B7700C6FB9F /* DocCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 667958AC13B92B7700C6FB9F /* DocCell.m */; };
 		668E7AC51399612300A0E5E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7AC41399612300A0E5E0 /* UIKit.framework */; };
 		668E7AC71399612300A0E5E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 668E7AC61399612300A0E5E0 /* Foundation.framework */; };
@@ -146,6 +147,8 @@
 		6652B66813B5101B00A0E123 /* ProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectCell.h; path = Vellum/ProjectCell.h; sourceTree = "<group>"; };
 		6652B66913B5101B00A0E123 /* ProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectCell.m; path = Vellum/ProjectCell.m; sourceTree = "<group>"; };
 		666E95EA13A680B40056834D /* Vellum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vellum.xcdatamodel; sourceTree = "<group>"; };
+		6671ED7114E9BC61000E13BE /* DocView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocView.h; sourceTree = "<group>"; };
+		6671ED7214E9BC61000E13BE /* DocView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocView.m; sourceTree = "<group>"; };
 		667958AB13B92B7700C6FB9F /* DocCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DocCell.h; path = Vellum/DocCell.h; sourceTree = "<group>"; };
 		667958AC13B92B7700C6FB9F /* DocCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DocCell.m; path = Vellum/DocCell.m; sourceTree = "<group>"; };
 		668E7AC01399612300A0E5E0 /* Vellum for iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vellum for iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,7 +226,7 @@
 				66CE30A213B4DB96008A274B /* Vellum.storyboard */,
 				66D2C81C139E9EE700428452 /* Resources */,
 				66EE687013BA41E10020F995 /* Controllers */,
-				66EE687813BA42420020F995 /* Table Cells */,
+				66EE687813BA42420020F995 /* Data Views */,
 				668E7B44139965EA00A0E5E0 /* Models */,
 				668E7AE41399616100A0E5E0 /* iPad */,
 				668E7ACA1399612300A0E5E0 /* Other Code */,
@@ -357,7 +360,7 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		66EE687813BA42420020F995 /* Table Cells */ = {
+		66EE687813BA42420020F995 /* Data Views */ = {
 			isa = PBXGroup;
 			children = (
 				6652B66813B5101B00A0E123 /* ProjectCell.h */,
@@ -370,8 +373,10 @@
 				6635CC5113BA5E8400E8D018 /* DocContentCell.m */,
 				66B84AF5145F9268003F43C6 /* DetailViewCell.h */,
 				66B84AF6145F9268003F43C6 /* DetailViewCell.m */,
+				6671ED7114E9BC61000E13BE /* DocView.h */,
+				6671ED7214E9BC61000E13BE /* DocView.m */,
 			);
-			name = "Table Cells";
+			name = "Data Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,6 +544,7 @@
 				6635CC4F13BA5E7800E8D018 /* AttrCell.m in Sources */,
 				6635CC5213BA5E8400E8D018 /* DocContentCell.m in Sources */,
 				66B84AF7145F9268003F43C6 /* DetailViewCell.m in Sources */,
+				6671ED7314E9BC61000E13BE /* DocView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

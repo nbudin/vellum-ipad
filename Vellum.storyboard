@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="5">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -68,81 +68,29 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items/>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="37">
+                            <webView contentMode="scaleToFill" id="wfq-c9-MMj" customClass="DocView">
                                 <rect key="frame" x="0.0" y="44" width="703" height="704"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AttrCell" id="53" customClass="AttrCell">
-                                        <rect key="frame" x="0.0" y="54" width="703" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="43" y="1" width="617" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Attr name" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="56">
-                                                    <rect key="frame" x="58" y="12" width="163" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" red="0.6956521739" green="0.6956521739" blue="0.6956521739" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <webView contentMode="scaleToFill" id="57">
-                                                    <rect key="frame" x="229" y="4" width="418" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <dataDetectorType key="dataDetectorTypes"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="53" id="GVK-6w-Tlq"/>
-                                                    </connections>
-                                                </webView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <outlet property="attrNameLabel" destination="56" id="10001"/>
-                                            <outlet property="webView" destination="57" id="10002"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DocContentCell" rowHeight="200" id="58" customClass="DocContentCell">
-                                        <rect key="frame" x="0.0" y="99" width="703" height="201"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="43" y="1" width="617" height="199"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <webView contentMode="scaleToFill" id="59">
-                                                    <rect key="frame" x="57" y="11" width="503" height="178"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <dataDetectorType key="dataDetectorTypes"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="58" id="0ec-oB-vH6"/>
-                                                    </connections>
-                                                </webView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <outlet property="webView" destination="59" id="10003"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="4" id="63"/>
-                                    <outlet property="delegate" destination="4" id="62"/>
+                                    <outlet property="delegate" destination="4" id="bIk-jm-3eB"/>
                                 </connections>
-                            </tableView>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="wDF-07-LCw">
+                                <rect key="frame" x="341" y="386" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="52"/>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="tableView" destination="37" id="39"/>
-                        <outlet property="toolbar" destination="35" id="61"/>
+                        <outlet property="activityIndicator" destination="wDF-07-LCw" id="cfZ-Fz-KRh"/>
+                        <outlet property="docView" destination="wfq-c9-MMj" id="wmh-Ev-E0q"/>
+                        <outlet property="toolbar" destination="35" id="FYv-rU-YyV"/>
                     </connections>
                 </viewController>
             </objects>
@@ -201,7 +149,7 @@
                                 <connections>
                                     <outlet property="blurbLabel" destination="48" id="49"/>
                                     <outlet property="nameLabel" destination="47" id="50"/>
-                                    <segue destination="4" kind="replace" identifier="docSelected" splitViewControllerTargetIndex="1" id="51"/>
+                                    <segue destination="4" kind="replace" identifier="docSelected" splitViewControllerTargetIndex="1" id="Hvi-rf-mXy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -218,25 +166,14 @@
         </scene>
     </scenes>
     <classes>
-        <class className="AttrCell" superclassName="DetailViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AttrCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="attrNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
         <class className="AuthenticatedTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AuthenticatedTableViewController.h"/>
-        </class>
-        <class className="DetailViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
         </class>
         <class className="DetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="docView" candidateClass="DocView"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
         </class>
@@ -247,8 +184,8 @@
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="DocContentCell" superclassName="DetailViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DocContentCell.h"/>
+        <class className="DocView" superclassName="UIWebView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DocView.h"/>
         </class>
         <class className="DocsListViewController" superclassName="AuthenticatedTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DocsListViewController.h"/>
@@ -266,6 +203,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="12"/>
+        <segue reference="Hvi-rf-mXy"/>
     </inferredMetricsTieBreakers>
 </document>
